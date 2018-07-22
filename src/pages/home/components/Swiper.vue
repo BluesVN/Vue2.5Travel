@@ -21,12 +21,12 @@ export default {
         {
           id: '0001',
           imgUrl:
-            'https://source.qunarzz.com/site/images/wap/home/recommend/iphoneplus/20180713_CPM_11053.jpg'
+            'http://img1.qunarzz.com/piao/fusion/1807/a1/41a802abfc4f0202.jpg_750x200_9f0cf69c.jpg'
         },
         {
           id: '0002',
           imgUrl:
-            'https://source.qunarzz.com/site/images/wap/home/recommend/iphoneplus/dujia_shuqi_banner_20180710.jpg'
+            'http://img1.qunarzz.com/piao/fusion/1806/a1/e645466a5a1c9a02.jpg_750x200_9c489fbd.jpg'
         }
       ]
     }
@@ -41,7 +41,7 @@ export default {
   overflow: hidden
   width: 100%
   height: 0
-  padding-bottom: 24.533%
+  padding-bottom: 26.66%
   background-color: #eee
 
   .swiper-img
