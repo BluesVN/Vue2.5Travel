@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption" >
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -10,80 +10,24 @@
         </div>
       </swiper-slide>
     </swiper>
-
   </div>
 </template>
 <script>
 export default {
+  name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      iconList: [
-        {
-          id: '0001',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        },
-        {
-          id: '0002',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/27/dac2bcf9added702.png',
-          desc: '海滨海岛'
-        },
-        {
-          id: '0003',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/ee/5114069893722102.png',
-          desc: '游山玩水'
-        },
-        {
-          id: '0004',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '一日游'
-        },
-        {
-          id: '0005',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '必游榜单'
-        },
-        {
-          id: '0006',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-          desc: '自然风光'
-        },
-        {
-          id: '0007',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/48/cb72b99b71974c02.png',
-          desc: '休闲玩乐'
-        },
-        {
-          id: '0008',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png',
-          desc: '假日玩水'
-        },
-        {
-          id: '0009',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-          desc: '亲子游'
-        },
-        {
-          id: '0010',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-          desc: '全部玩乐'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
-      return this.iconList.reduce((pages, item, index) => {
+      return this.list.reduce((pages, item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
